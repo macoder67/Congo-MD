@@ -1,0 +1,50 @@
+{
+    "name": "Congo-MD",
+    "description": "Advanced JavaScript bot with Multiple Features",
+    "keywords": [
+        "bot",
+        "whatsapp",
+        "whatsapp-bot",
+        "Congo-MD",
+        "multi-device"
+    ],
+    "repository": "https://github.com/macoder67/Congo-MD",
+    "stack": "container",
+    "env": {
+        "SESSION_ID": {
+            "description": "Session ID obtained after scanning QR code",
+            "required": false
+        },
+        "OWNER_NUMBER": {
+            "description": "Your WhatsApp number (e.g., 27656136438)",
+            "required": true
+        },
+        "PREFIX": {
+            "description": "Prefix for bot commands",
+            "value": ".",
+            "required": true
+        }
+    },
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "basic"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        },
+        {
+            "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
+        }
+    ],
+    "addons": [
+        {
+            "plan": "heroku-postgresql"
+        }
+    ]
+}
